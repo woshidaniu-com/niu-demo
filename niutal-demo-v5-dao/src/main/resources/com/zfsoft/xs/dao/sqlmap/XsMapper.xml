@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.woshidaniu.xs.xsgl.dao.daointerface.IXsDao" >
+
+	<!-- 基础查询 -->
+	<sql id="queryListSql">
+		select * from (
+			select *
+			from niutal_xtgl_xsxxb
+		) where 1=1 
+		<if test="searchModel.querySQL != null and searchModel.querySQL !=''">
+			 and ${searchModel.querySQL}
+		</if>
+	</sql>
+	
+	<!-- 查询用户信息列表 -->
+	<select id="getPagedList" parameterType="com.woshidaniu.xs.xsgl.dao.entities.XsModel" resultType="com.woshidaniu.xs.xsgl.dao.entities.XsModel">
+		<include refid="queryListSql"></include>
+	</select>
+</mapper>

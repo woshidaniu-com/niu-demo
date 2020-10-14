@@ -1,0 +1,257 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.woshidaniu</groupId>
+		<artifactId>niutal-demo-v5</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+	
+	<artifactId>niutal-demo-v5-web</artifactId>
+	<packaging>war</packaging>
+	
+	<dependencies>
+		<dependency>
+  <groupId>org.hyperic</groupId>
+  <artifactId>sigar</artifactId>
+  <version>1.6.5.132-6</version>
+</dependency>
+		<dependency>
+  <groupId>org.hyperic</groupId>
+  <artifactId>sigar-native</artifactId>
+  <version>1.6.5.132-6</version>
+</dependency>
+		<!-- <dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-core-sso</artifactId>
+			<version>${niutal.version}</version>
+		</dependency> -->
+
+		<!-- <dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-ui-v5</artifactId>
+			<version>1.0.0</version>
+			<classifier>webjars</classifier>
+		</dependency> -->
+		
+		<!-- 业务系统Controller模块依赖 -->
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-demo-v5-controller</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		
+		<!-- 文件服务模块-->
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-component-filemgr-controller</artifactId>
+			<version>${niutal.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-component-filemgr-web</artifactId>
+			<version>${niutal.version}</version> 
+			<type>war</type>
+		</dependency>
+		<!-- 
+			1、niutal-core-files工程废弃；相关代码迁移至 niutal-component-filemgr-patch
+			2、在下个版本niutal-component-filemgr-patch将也会废弃
+		-->
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-component-filemgr-patch</artifactId>
+			<version>${niutal.version}</version>
+		</dependency>
+		
+		
+		<!-- 富文本编辑器（Kindeditor）模块 -->
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-component-editor-controller</artifactId>
+			<version>${niutal.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-component-editor-web-v5</artifactId>
+			<version>${niutal.version}</version> 
+			<type>war</type>
+		</dependency>
+		
+		<!-- 富文本编辑器（UEeditor）模块 
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-component-editor-ext</artifactId>
+			<version>${niutal.version}</version> 
+		</dependency>
+		-->
+		
+		
+		<!-- 基础web模块 -->
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-core-web-v5</artifactId> 
+			<type>war</type>
+		</dependency>
+		
+		<!-- 消息服务模块-->
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-component-ms-controller</artifactId>
+			<version>${niutal.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-component-ms-service</artifactId>
+			<version>${niutal.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-component-ms-api</artifactId>
+			<version>${niutal.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<version>${niutal.version}</version>
+			<artifactId>niutal-component-ms-web</artifactId> 
+			<type>war</type>
+		</dependency> 
+		
+		<!-- 密码找回模块(依赖消息服务模块)-->
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-component-pwdmgr-controller</artifactId>
+			<version>${niutal.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-component-pwdmgr-web</artifactId>
+			<version>${niutal.version}</version> 
+			<type>war</type>
+		</dependency>
+		
+		<!-- 应用监控模块 -->
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-component-monitor-controller</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-component-monitor-web</artifactId> 
+			<type>war</type>
+		</dependency>
+		
+		<!-- 服务监控模块 -->
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-component-metrics-api</artifactId>
+			<version>${niutal.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-component-metrics-web</artifactId> 
+			<version>${niutal.version}</version>
+			<type>war</type>
+		</dependency>
+		
+		<!-- 审批流Web模块依赖 -->
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-component-bpm-web</artifactId>
+			<type>war</type>
+		</dependency>
+		
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-component-wjdc-controller</artifactId>
+		</dependency>	
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-component-wjdc-web-v5</artifactId>
+			<type>war</type>
+		</dependency>
+		
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-component-print-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-component-print-web</artifactId>
+			<type>war</type>
+		</dependency>
+		
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-component-zxzx-controller</artifactId>
+			<version>${niutal.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-component-zxzx-web-v5</artifactId>
+			<version>${niutal.version}</version>
+			<type>war</type>
+		</dependency>
+		
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<overlays>
+						<overlay></overlay>
+						<overlay>
+							<groupId>${project.groupId}</groupId>
+							<artifactId>niutal-component-editor-web-v5</artifactId>
+						</overlay>
+						<overlay>
+							<groupId>${project.groupId}</groupId>
+							<artifactId>niutal-component-filemgr-web</artifactId>
+						</overlay>
+						<overlay>
+							<groupId>${project.groupId}</groupId>
+							<artifactId>niutal-component-monitor-web</artifactId>
+						</overlay> 
+						<overlay>
+							<groupId>${project.groupId}</groupId>
+							<artifactId>niutal-component-print-web</artifactId>
+						</overlay>
+						<overlay>
+							<groupId>${project.groupId}</groupId>
+							<artifactId>niutal-component-wjdc-web-v5</artifactId>
+						</overlay>
+						<overlay>
+							<groupId>${project.groupId}</groupId>
+							<artifactId>niutal-component-bpm-web</artifactId>
+						</overlay>
+						<overlay>
+							<groupId>${project.groupId}</groupId>
+							<artifactId>niutal-component-ms-web</artifactId>
+						</overlay>
+						<overlay>
+							<groupId>${project.groupId}</groupId>
+							<artifactId>niutal-component-pwdmgr-web</artifactId>
+						</overlay>
+						<overlay>
+							<groupId>${project.groupId}</groupId>
+							<artifactId>niutal-component-zxzx-web-v5</artifactId>
+						</overlay>
+						<overlay>
+							<groupId>${project.groupId}</groupId>
+							<artifactId>niutal-core-web-v5</artifactId>
+						</overlay>
+					</overlays>
+					<dependentWarExcludes></dependentWarExcludes>
+				</configuration>
+			</plugin>
+			<!-- 通过docker-maven插件构造Docker镜像 -->
+<!--			<plugin>-->
+<!--				<groupId>com.spotify</groupId>-->
+<!--				<artifactId>docker-maven-plugin</artifactId>-->
+<!--			</plugin>-->
+		</plugins>
+	</build>
+	
+</project>

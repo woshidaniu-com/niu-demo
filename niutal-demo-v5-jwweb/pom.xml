@@ -1,0 +1,309 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.woshidaniu</groupId>
+		<artifactId>niutal-demo-v5</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+	<artifactId>niutal-demo-v5-jwweb</artifactId>
+	<packaging>war</packaging>
+	
+	<dependencies>
+		
+		<!-- ###################### 我是大牛快速快发组件 ###################### -->
+		
+		<!-- fastxls : 基于POI、JXL的Excel,Doc,PPT等快速生成组件  -->
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>fastxls-struts2</artifactId>
+		</dependency>
+		
+		<!-- niutal 是我是大牛设计编写的一套快速快发业务框架 -->
+		<!--其中包含：
+			niutal-core-api  	： 预留或定义的供第三方访问的接口
+			niutal-core-common  	： 核心公共通用逻辑代码
+			niutal-core-sso 		： 业务框架单点登录
+			niutal-core-util  	：  业务框架通用工具类，兼有对分离组件的过渡对象				
+			niutal-core-jwdao  	： 业务框架dao层
+			niutal-core-jwservice： 业务框架service层
+			niutal-core-jwws  	： 实现对第三方接口访问的通用逻辑代码
+		 -->
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-core-api</artifactId>
+			<version>${niutal.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-core-common</artifactId>
+			<version>${niutal.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-core-sso</artifactId>
+			<version>${niutal.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-core-util</artifactId>
+			<version>${niutal.version}</version>
+		</dependency>	
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-core-struts2</artifactId>
+			<version>${niutal.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-core-webmvc</artifactId>
+			<version>${niutal.version}</version>
+		</dependency>
+		
+		<!-- 教务框架（教务专用） -->
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-core-jwdao</artifactId>
+			<version>${niutal.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-core-jwservice</artifactId>
+			<version>${niutal.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-core-jwws</artifactId>
+			<version>${niutal.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-core-jwaction</artifactId>
+			<version>${niutal.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-core-jwweb</artifactId>
+			<version>${niutal.version}</version>
+			<type>war</type>
+		</dependency>
+		<!-- 主线框架（Spring MVC） -->
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-core-web-v5</artifactId>
+			<version>${niutal.version}</version>
+			<type>war</type>
+		</dependency>
+		<!-- 数据范围模块 -->
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-component-datarange-action</artifactId>
+			<version>${niutal.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-component-datarange-web</artifactId>
+			<version>${niutal.version}</version>
+			<type>war</type>
+		</dependency>
+		<!-- 本地化模块 -->
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-component-i18n-action</artifactId>
+			<version>${niutal.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-component-i18n-web</artifactId>
+			<version>${niutal.version}</version>
+			<type>war</type>
+		</dependency>
+		<!-- 自定义功能模块 -->
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-component-designer-action</artifactId>
+			<version>${niutal.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-component-designer-web</artifactId>
+			<version>${niutal.version}</version>
+			<type>war</type>
+		</dependency>
+		<!-- 导入导出模块 -->
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-component-drdc-core</artifactId>
+			<version>${niutal.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-component-drdc-web</artifactId>
+			<version>${niutal.version}</version>
+			<type>war</type>
+		</dependency>
+		<!-- 富文本编辑器（Kindeditor）模块 -->
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-component-editor-action</artifactId>
+			<version>${niutal.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-component-editor-web</artifactId>
+			<version>${niutal.version}</version> 
+			<type>war</type>
+		</dependency>
+		<!-- 标签库模块 -->
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-component-taglibs-action</artifactId>
+			<version>${niutal.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-component-taglibs-web</artifactId>
+			<version>${niutal.version}</version>
+			<type>war</type>
+		</dependency>
+		<!-- 旧版工作流模块 -->
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-component-workflow-core</artifactId>
+			<version>${niutal.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-component-workflow-web</artifactId>
+			<version>${niutal.version}</version>
+			<type>war</type>
+		</dependency>
+		<!-- 基于Activiti的工作流模块 -->
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-component-bpm</artifactId>
+			<version>${niutal-bpm.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-component-bpm-mgr</artifactId>
+			<version>${niutal-bpm.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-component-bpm-web</artifactId>
+			<version>${niutal-bpm.version}</version>
+			<type>war</type>
+		</dependency>
+		<!-- 消息服务模块 -->
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-component-ms-controller</artifactId>
+			<version>${niutal.version}</version> 
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-component-ms-web</artifactId>
+			<version>${niutal.version}</version>
+			<type>war</type>
+		</dependency>
+		<!-- 密码找回模块(依赖消息服务模块)-->
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-component-pwdmgr-controller</artifactId>
+			<version>${niutal.version}</version> 
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-component-pwdmgr-web</artifactId>
+			<version>${niutal.version}</version>
+			<type>war</type>
+		</dependency>
+		<!-- 应用监控模块 
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-component-monitor-controller</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-component-monitor-web</artifactId> 
+			<type>war</type>
+		</dependency>-->
+	</dependencies>
+
+	<build>
+		<plugins>
+			<!-- war 包生成插件  -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<attachClasses>false</attachClasses>
+					<overlays> 
+						<!-- empty groupId/artifactId is detected as the current build -->
+				       	<!-- 代表当前WAR项目，默认情况下当前WAR项目是先被拷贝的，如果要控制其顺序，则使用空的overlay -->
+				       	<!-- any other overlay will be applied after the current build since 
+				       	they have not been configured in the overlays element -->
+				      	<overlay>
+				      	</overlay>
+						<!-- 框架Web工程及框架功能模块 -->
+	                    <overlay>  
+	                        <groupId>com.woshidaniu</groupId>  
+	                        <artifactId>niutal-component-datarange-web</artifactId>
+	                    </overlay>
+	                    <overlay>  
+	                        <groupId>com.woshidaniu</groupId>  
+	                        <artifactId>niutal-component-i18n-web</artifactId>
+	                    </overlay>
+	                    <overlay>  
+	                        <groupId>com.woshidaniu</groupId>  
+	                        <artifactId>niutal-component-drdc-web</artifactId>
+	                    </overlay>
+	                    <overlay>
+	                    	<groupId>com.woshidaniu</groupId>
+							<artifactId>niutal-component-editor-web</artifactId>
+	                    </overlay>
+	                    <overlay>  
+	                        <groupId>com.woshidaniu</groupId>  
+	                        <artifactId>niutal-component-taglibs-web</artifactId>
+	                    </overlay>
+	                    <overlay>  
+	                        <groupId>com.woshidaniu</groupId>  
+	                        <artifactId>niutal-component-designer-web</artifactId>
+	                    </overlay>
+	                    <overlay>  
+	                        <groupId>com.woshidaniu</groupId>  
+	                        <artifactId>niutal-component-workflow-web</artifactId>
+	                    </overlay>
+	                    <overlay>  
+	                        <groupId>com.woshidaniu</groupId>  
+	                        <artifactId>niutal-component-bpm-web</artifactId>
+	                    </overlay>
+	                    <overlay>  
+	                        <groupId>com.woshidaniu</groupId>  
+	                        <artifactId>niutal-component-ms-web</artifactId>
+	                    </overlay>
+	                    <overlay>  
+	                        <groupId>com.woshidaniu</groupId>  
+	                        <artifactId>niutal-component-pwdmgr-web</artifactId>
+	                    </overlay>
+	                   <!--  <overlay>  
+	                        <groupId>com.woshidaniu</groupId>  
+	                        <artifactId>niutal-component-monitor-web</artifactId>
+	                    </overlay> -->
+	                    <!-- niutal-core-jwweb需要在niutal-core-web-v5之上，目的是覆盖主框架的部分文件 -->
+	                    <overlay>  
+	                        <groupId>com.woshidaniu</groupId>  
+	                        <artifactId>niutal-core-jwweb</artifactId> 
+	                    </overlay>
+	                    <dependency>
+							<groupId>com.woshidaniu</groupId>  
+							<artifactId>niutal-core-web-v5</artifactId>
+						</dependency>
+	                </overlays>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	
+</project>

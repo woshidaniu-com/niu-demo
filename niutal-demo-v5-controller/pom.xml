@@ -1,0 +1,61 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.woshidaniu</groupId>
+		<artifactId>niutal-demo-v5</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+	
+	<artifactId>niutal-demo-v5-controller</artifactId>
+	<packaging>jar</packaging>
+
+	<dependencies>
+
+		<!-- 框架核心代码依赖 -->
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-core-controller</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niukit-qa</artifactId>
+			<version>${niukit.version}</version>
+			<scope>test</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niukit-disruptor</artifactId>
+			<version>${niukit.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niukit-rocketmq</artifactId>
+			<version>${niukit.version}</version>
+		</dependency>
+		
+		<!-- 业务系统Service模块依赖 -->
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-demo-v5-service</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-component-metrics-api</artifactId>
+			<version>${niutal.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-component-print-core</artifactId>
+			<version>${niutal.version}</version>
+		</dependency>
+
+
+	</dependencies>
+	
+</project>

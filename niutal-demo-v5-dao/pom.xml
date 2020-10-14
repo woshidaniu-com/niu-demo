@@ -1,0 +1,39 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.woshidaniu</groupId>
+		<artifactId>niutal-demo-v5</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>niutal-demo-v5-dao</artifactId>
+	<packaging>jar</packaging>
+
+	<dependencies>
+
+		<!-- 框架核心代码依赖 -->
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-core-dao</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-core-export</artifactId>
+			<version>${niutal.version}</version>
+		</dependency>
+		
+		<!-- 审批流模块依赖 -->
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-component-bpm</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>niutal-component-bpm-mgr</artifactId>
+		</dependency>
+
+	</dependencies>
+
+
+</project>

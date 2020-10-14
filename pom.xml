@@ -1,0 +1,169 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.woshidaniu</groupId>
+		<artifactId>niutal</artifactId>
+		<version>1.3.21-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>niutal-demo-v5</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<modules>
+		<module>niutal-demo-v5-dao</module>
+		<module>niutal-demo-v5-doc</module>
+		<module>niutal-demo-v5-service</module>
+		<module>niutal-demo-v5-web</module>
+		<module>niutal-demo-v5-controller</module>
+		<module>niutal-demo-v5-apidoc</module>
+		<module>niutal-demo-v5-jwweb</module>
+	</modules>
+
+	<!-- 开发者信息：请更改为业务系统开发者信息 -->
+	<developers>
+
+		<developer>
+			<id></id>
+			<name></name>
+			<email></email>
+		</developer>
+	</developers>
+
+	<!-- SCM配置:请配置成SVN所在地址 -->
+	<scm>
+		<connection>scm:svn:http://10.71.32.193/svn/repository/jszx_jcpt/niutal_demo/trunk/niutal-demo-v5/</connection>
+		<developerConnection>scm:svn:http://10.71.32.193/svn/repository/jszx_jcpt/niutal_demo/trunk/niutal-demo-v5/</developerConnection>
+		<tag>scm:svn:http://10.71.32.193/svn/repository/jszx_jcpt/niutal_demo/tags/</tag>
+		<url>scm:svn:http://10.71.32.193/svn/repository/jszx_jcpt/niutal_demo/trunk/niutal-demo-v5/</url>
+	</scm>
+
+	<!-- 业务系统版本自己定义 -->
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+		<bpm.version>1.1.4-SNAPSHOT</bpm.version>
+	</properties>
+
+	<!-- 依赖组件版本管理 -->
+	<dependencyManagement>
+		<dependencies>
+
+			<!-- 框架核心代码依赖 -->
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>niutal-core-dao</artifactId>
+				<version>${niutal.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>niutal-core-service</artifactId>
+				<version>${niutal.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>niutal-core-controller</artifactId>
+				<version>${niutal.version}</version>
+			</dependency>
+			<!-- 基础web模块 -->
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>niutal-core-web-v5</artifactId>
+				<version>${niutal.version}</version>
+				<type>war</type>
+			</dependency>
+
+			<!-- 消息服务模块 -->
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>niutal-component-ms-controller</artifactId>
+				<version>${niutal.version}</version> 
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>niutal-component-ms-web</artifactId>
+				<version>${niutal.version}</version>
+				<type>war</type>
+			</dependency>
+			
+			<!-- 密码找回模块(依赖消息服务模块)-->
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>niutal-component-pwdmgr-controller</artifactId>
+				<version>${niutal.version}</version> 
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>niutal-component-pwdmgr-web</artifactId>
+				<version>${niutal.version}</version>
+				<type>war</type>
+			</dependency>
+
+			<!-- 应用监控模块 -->
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>niutal-component-monitor-controller</artifactId>
+				<version>${niutal.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>niutal-component-monitor-web</artifactId>
+				<version>${niutal.version}</version>
+				<type>war</type>
+			</dependency>
+		
+			<!-- 审批流模块 -->
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>niutal-component-bpm</artifactId>
+				<version>${bpm.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>niutal-component-bpm-mgr</artifactId>
+				<version>${bpm.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>niutal-component-bpm-web</artifactId>
+				<version>${bpm.version}</version>
+				<type>war</type>
+			</dependency>
+
+			<!-- 问卷调查模块 -->
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>niutal-component-wjdc-controller</artifactId>
+				<version>${niutal.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>niutal-component-wjdc-web-v5</artifactId>
+				<version>${niutal.version}</version>
+				<type>war</type>
+			</dependency>
+
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>niutal-component-print-core</artifactId>
+				<version>${niutal.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>niutal-component-print-web</artifactId>
+				<version>${niutal.version}</version>
+				<type>war</type>
+			</dependency>
+		</dependencies>
+
+	</dependencyManagement>
+
+	<!-- 默认依赖 -->
+	<dependencies>
+		
+		
+	</dependencies>
+	
+ 
+</project>
